@@ -1,0 +1,204 @@
+﻿<!DOCTYPE HTML>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+      <title>DEW technology</title>
+			<link href="content-images/dew_html.png" rel="SHORTCUT ICON" />
+			<meta name="keywords" content="DIYU,diyu, YUDI,yudi,雨滴,雨滴科技,滴雨,滴雨科技,滴雨软件,滴雨公司,边缘计算,web 3.0,Dew,dew,Dew Technology,云计算，超融合,物联网,人工智能,云存储,云服务,区块链,分布式记账,docker云,容器云,K8S,微服务,cloud technology,internet of things, Cloud Storage, storage, software, cloud fusion, artificial intelligent, AI, cloud computing,blcokchain, hyperfledge,Micro Service,Kubernetes 8" />
+			<meta name="description" content="Provide integrated the third generation blockchain, microservice platform k8s,Cloud Computing, Artificial Intelligence, big data, disaster recovery technology, and the Internet of Things to small and medium-sized enterprises, avoiding a system that cannot maintain multiple sets of different body systems, or renting multiple sets of cloud services to achieve cost savings. purpose. All the software provided by Drip Rain Company is one-click installation, graphical management, regardless of size, all free." />
+      <link href="css/iconfont-style.css" rel="stylesheet">
+			<link href="css/iconfont.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/_style.css" />
+      <link rel="stylesheet" type="text/css" href="css/foot.css" />
+      <link rel="stylesheet" type="text/css" href="css/_mobile.css" />
+      <link rel="stylesheet" type="text/css" href="css/primary-blue-grey.css" />
+			<link href="css/download/bootstrap.css" rel="stylesheet" />
+      <link href="css/download/downloadstyle.css" rel="stylesheet" />
+      <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+      <script type="text/javascript" src="js/custom-main.js"></script>
+      <!--[if lt IE 9]>
+      <link rel="stylesheet" href="css/IE.css" />
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <!--[if lte IE 8]>
+      <script type="text/javascript" src="js/IE.js"></script>
+      <![endif]-->
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+   <body>
+   	
+   	
+     <!-- START Top-Toolbar -->
+    	 <script type="text/javascript" src="js/Top-Toolbar.js"></script>   
+      <!-- END Top-Toolbar -->
+      
+      
+      <!-- START Header -->
+  		<script type="text/javascript" src="js/Header.js"></script>   
+      <!-- END Header -->
+		   	<section id="content-container" class="clearfix">
+				  <div id="main-wrap" class="clearfix">
+				  	 
+					  <div class="page_content blog_page_content">
+			         <div id="post-1">
+			            <article class="preview blog-main-preview">
+			               <h2>Flume Integration with Kafka</h2>
+			               <span class="metadata postinfo">Posted on Nov 05, 2019</span> 
+			             		<img src="content-images/Flumeflafka.jpg" alt="" />   
+			             		<p></p>	
+			               <p><strong>概述</strong></p>	
+			               <p>
+			               	（1）kafka和flume都是日志系统。kafka是分布式消息中间件，自带存储，提供push和pull存取数据功能。flume分为agent（数据采集器）,collector（数据简单处理和写入）,storage（存储器）三部分，每一部分都是可以定制的。比如agent采用RPC（Thrift-RPC）、text（文件）等，storage指定用hdfs做。
+			               	</p>	
+			               	<p>
+											（2）kafka做日志缓存应该是更为合适的，但是 flume的数据采集部分做的很好，可以定制很多数据源，减少开发量。所以比较流行flume+kafka模式，如果为了利用flume写hdfs的能力，也可以采用kafka+flume的方式。
+											</p>
+										  <p><strong>1.	Flume介绍</strong></p>	
+			               	<p>
+											 Flume是一个分布式、可靠、和高可用的海量日志聚合的系统，支持在系统中定制各类数据发送方，用于收集数据；同时，Flume提供对数据进行简单处理，并写到各种数据接受方（可定制）的能力。
+											</p>
+			               	<p>
+												可靠性: 当节点出现故障时，日志能够被传送到其他节点上而不会丢失。Flume提供了三种级别的可靠性保障，从强到弱依次分别为：end-to-end（收到数据agent首先将event写到磁盘上，当数据传送成功后，再删除；如果数据发送失败，可以重新发送。），Store on failure（这也是scribe采用的策略，当数据接收方crash时，将数据写到本地，待恢复后，继续发送），Best effort（数据发送到接收方后，不会进行确认）。
+											</p>
+			               	<p>
+												可扩展性: Flume采用了三层架构，分别为agent，collector和storage，每一层均可以水平扩展。其中，所有agent和collector由master统一管理，这使得系统容易监控和维护，且master允许有多个（使用ZooKeeper进行管理和负载均衡），这就避免了单点故障问题。
+											</p>
+											<p>
+												可管理性: 所有agent和colletor由master统一管理，这使得系统便于维护。多master情况，Flume利用ZooKeeper和gossip，保证动态配置数据的一致性。用户可以在master上查看各个数据源或者数据流执行情况，且可以对各个数据源配置和动态加载。Flume提供了web 和shell script command两种形式对数据流进行管理。
+			               	</p>
+			               	<p>	
+			               		功能可扩展性用户可以根据需要添加自己的agent，collector或者storage。此外，Flume自带了很多组件，包括各种agent（file， syslog等），collector和storage（file，HDFS等）。
+			               	</p>	
+			               	<p>	
+											<strong>2.	Flume 的 一些核心概念：</strong>
+											</p>
+											<p>	
+											<table  border="1" cellspacing="0" style="text-align:justify;font-size:12pt">
+												<thead>
+													<tr >
+													<td style="width:150px;height:30px;">
+													组件名称
+													</td>
+													<td >
+													功能介绍
+													</td>
+													</tr>
+												</thead>
+												<tr>
+												<td style="width:150px;height:30px;">
+												代理
+												</td>
+												<td >
+												使用JVM 运行Flume。每台机器运行一个agent，但是可以在一个agent中包含多个sources和sinks。
+												</td>
+												</tr>
+												<tr >
+												<td style="width:150px;height:30px;">
+												Client客户端
+												</td>
+												<td>
+												生产数据，运行在一个独立的线程。
+												</td>
+												</tr>
+												<tr>
+												<td style="width:150px;height:30px;">
+												Source源
+												</td>
+												<td>
+												从Client收集数据，传递给Channel。
+												</td>
+												</tr>
+												<tr>
+												<td style="width:150px;height:30px;">
+												Sink接收器
+												</td>
+												<td>
+												从Channel收集数据，进行相关操作，运行在一个独立线程。
+												</td>
+												</tr>
+												<tr>
+												<td style="width:150px;height:30px;">
+												Channel通道
+												</td>
+												<td>
+												连接sources和sinks ，这个有点像一个队列。
+												</td>
+												</tr>
+												<tr>
+												<td style="width:150px;height:30px;">
+												Events事件
+												</td>
+												<td>
+												传输的基本数据负载。
+												</td>
+												</tr>
+											</table>
+											
+											</p>
+											
+			               	<p>	
+												<strong>3.	Flume的整体构成图</strong>
+											</p>	         
+										  <p>	
+										  	 		<img src="content-images/flume.jpg" alt="" /> 
+											</p>	   
+											
+											
+											<p>	
+											 <strong>4.	 tomcat业务日志收集</strong>
+											</p>	         
+										  <p>	
+										  	 <img src="content-images/Flumeflafka02.png" alt="" /> 
+											</p>	   
+			              	<p>			              		
+			              		    关于Flume收集tomcat业务日志，需要调整的点比较多；设计初衷是：
+			              		    </br>
+    												1）HDFS中收集所有的历史日志，包括catalina、access_log、业务日志等。
+    												</br>
+    												2）kafka只实时收集access_log和指定的业务日志；我们可以用这些数据做业务监控等。
+
+			              	</p>
+			              	<p>
+			              		<strong>5.KAFKA</strong>
+			              	</p>
+		
+			              	<p>
+			              	  基本概念    </br>
+												kafka是一个分布式的消息缓存系统    </br>
+												kafka集群中的服务器叫做broker    </br>
+												kafka有两种客户端，producer（消息生产者），consumer（消息消费者），客户端（两种）与kafka服务器之间使用tcp通信    </br>
+												kafka中不同业务系统的消息可以通过topic进行区分，而且每一个消息topic都会被分区，以分担消息读写的负载    </br>
+												每一个分区可以有多个副本，防止数据的丢失    </br>
+												如果某个分区中的数据需要更新，必须通过该分区所有副本中的leader来更新    </br>
+												消费者可以分组，比如有两个消费者AB，共同消费一个topic:testTopic，AB所消费的消息不会重复，比如testTopic中有100个消息，编号为0-99，如果A消费0-49，那么B就消费50-99。消费者在消费时可以指定消息的起始偏移量
+			              	</p>
+			              	<p>
+			              			 <img src="content-images/kafak.jpg" alt="" /> 
+			              	</p>
+			              	<p>
+			              		producer是数据源，比如flume架构，consumer是数据的输出，例如storm架构。Kafka服务器支持消息的分主题、分区。不同的子系统可以使用不同的主题。分区的意义在于负载均衡一般性的大数据流处理，还可以包括FLINK以及NOSQL 这里介绍如何集成Flume 和 Kafka. 
+			              	</p>
+			              	<p>
+			              		 <img src="content-images/Flumeflafka03.png" alt="" /> 
+			              	</p>
+			                <p>
+			              		 <img src="content-images/Flumeflafka04.jpg" alt="" /> 
+			              	</p>
+			              	
+			              	 <p>
+			              		  <h3><a href="documents\FlumeintegrationwithKafka.pdf" target="_blank">详细内容请下载Flume Integration with Kafka文档</a></h3>
+			              	</p>
+			            </article>
+			         </div>
+			      </div>
+		       </div>
+      </section>
+    <!-- START Footer Callout -->
+		<script type="text/javascript" src="js/footer-callout.js"></script>   
+    <!-- END Footer Callout -->
+    
+    <!-- START Footer -->
+		<script type="text/javascript" src="js/footer.js"></script> 
+    <!-- END Footer -->
+   </body>
+</html>

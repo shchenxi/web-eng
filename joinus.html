@@ -1,0 +1,249 @@
+﻿<!DOCTYPE HTML>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" /> 
+       <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+       <title>DEW technology</title>
+			<link href="content-images/dew_html.png" rel="SHORTCUT ICON" />
+			<meta name="keywords" content="DIYU,diyu, YUDI,yudi,雨滴,雨滴科技,滴雨,滴雨科技,滴雨软件,滴雨公司,边缘计算,web 3.0,Dew,dew,Dew Technology,云计算，超融合,物联网,人工智能,云存储,云服务,区块链,分布式记账,docker云,容器云,K8S,微服务,cloud technology,internet of things, Cloud Storage, storage, software, cloud fusion, artificial intelligent, AI, cloud computing,blcokchain, hyperfledge,Micro Service,Kubernetes 8" />
+			<meta name="description" content="Provide integrated the third generation blockchain, microservice platform k8s,Cloud Computing, Artificial Intelligence, big data, disaster recovery technology, and the Internet of Things to small and medium-sized enterprises, avoiding a system that cannot maintain multiple sets of different body systems, or renting multiple sets of cloud services to achieve cost savings. purpose. All the software provided by Drip Rain Company is one-click installation, graphical management, regardless of size, all free." />
+      <link href="css/iconfont-style.css" rel="stylesheet">
+			<link href="css/iconfont.css" rel="stylesheet">
+			<link rel="stylesheet" type="text/css" href="css/foot.css" />
+      <link rel="stylesheet" type="text/css" href="css/_style.css" />
+      <link rel="stylesheet" type="text/css" href="css/_mobile.css" />
+			<link rel="stylesheet" type="text/css" href="css/primary-blue-grey.css" />
+			<link rel="stylesheet" type="text/css" href="css/about-us-social-recruit.css">
+      <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+      <script type="text/javascript" src="js/custom-main.js"></script>
+
+		 
+      <!--[if lt IE 9]>
+      <link rel="stylesheet" href="css/IE.css" />
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <!--[if lte IE 8]>
+      <script type="text/javascript" src="js/IE.js"></script>
+      <![endif]-->
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+   <body>
+   	
+     <!-- START Top-Toolbar -->
+    	 <script type="text/javascript" src="js/Top-Toolbar.js"></script>   
+      <!-- END Top-Toolbar -->
+      
+      <!-- START Header -->
+  		<script type="text/javascript" src="js/Header.js"></script>   
+      <!-- END Header -->
+
+
+			<!-- MAP HALF LEFT BLOCK -->
+			
+	    <section id="content-container" class="clearfix">
+				      <!--关于我们内容-->
+		      <div class="about-us-content">
+		        <div class="investor-title">
+		        	<span class="spanline">JOIN US</span>
+		        	<hr class="line">
+		        </div>
+		        
+		      </div>
+		    	
+		    	
+		      <!--岗位投递-->
+		      <div class="tab1-content">
+		        <p class="item-title">Position</p>
+		        <div class="tab1-content-wrapper">
+		        	 <script type="text/html" id="recruitListTemplate">
+		          	{{each list as item i}}
+		          	  <div class="tab1-left-tab">
+		                <div class="tab1-left-tab-title">{{item.jobList}}</div>
+		                <div class="tab1-left-tab-content-wrapper">
+		                  {{each item.post as it j}}
+		                    <div class="tab1-left-tab-content"  onclick="showDetail({{it.id}}, this)">{{it.position}}</div>
+		                  {{/each}}
+		                </div>
+		              </div>
+		          	{{/each}}
+		          </script>
+		          <div class="tab1-left" id="recruitList">
+		          	  <div class="tab1-left-tab">
+		                <div class="tab1-left-tab-title tab1-left-tab-title-selected">R&D Position</div>
+		                		<div class="tab1-left-tab-content-wrapper" style="display: block;">
+		                    <div class="tab1-left-tab-content tab1-left-tab-content-selected" onclick="showDetail(101, this)" >Back-end Development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(102, this)">distribution storage development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(103, this)">Cloud computation development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(104, this)">SQL complilation development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(105, this)">Streaming computation development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(106, this)">Cloud network development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(107, this)">Cloud container development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(108, this)">mid-ware software development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(109, this)">Cloud security development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(110, this)">Front-end  development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(111, this)">Big data application development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(112, this)">Smart operation and maintenance development engineer</div>                  
+		                </div>
+		              </div>
+		          	
+		          	
+		          	
+		          	  <div class="tab1-left-tab">
+		                <div class="tab1-left-tab-title">Total solution position</div>
+		                <div class="tab1-left-tab-content-wrapper" style="">
+		                    <div class="tab1-left-tab-content" onclick="showDetail(201, this)">Project manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(202, this)">Data engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(203, this)">Big data architecture</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(204, this)">Data digging engineer</div>
+		                </div>
+		              </div>
+		          	
+		          	
+		          	
+		          	  <div class="tab1-left-tab">
+		                <div class="tab1-left-tab-title">Artificial Intelligent Position</div>
+		                <div class="tab1-left-tab-content-wrapper" style="">
+		                    <div class="tab1-left-tab-content" onclick="showDetail(301, this)">NLP arithmatic engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(302, this)">computer visial Reality Arithmatic engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(303, this)">Machine Learning Arithmatic engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(304, this)">AI platform development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(305, this)">AIOT 边缘计算平台开发工程师</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(306, this)">AIOT Embedded development engineer</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(307, this)">AI web interface engineer</div>
+		                </div>
+		              </div>
+		          	
+		          	
+		          	
+		          	  <div class="tab1-left-tab">
+		                <div class="tab1-left-tab-title">Sales Position</div>
+		                <div class="tab1-left-tab-content-wrapper" style="">
+		                    <div class="tab1-left-tab-content" onclick="showDetail(401, this)">Finance Vertical sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(402, this)">Government Vertical sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(403, this)">Manufacturing sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(404, this)">Military vertical sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(405, this)">Energy Vertical sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(406, this)">Transportation Vertical sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(407, this)">Regional sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(408, this)">Channel sales manager</div>
+		                    <div class="tab1-left-tab-content" onclick="showDetail(409, this)">Regional sales support expert</div>
+		                </div>
+		              </div>
+		          	
+		          	</div>
+		          
+		          <script type="text/html" id="detailListTemplate">
+		          	<p class="tab1-right-title icon1">Job Description</p>
+		            <div class="dash-line"></div>
+		            <div class="tab1-right-content">{{#jobDescription}}</div>
+		            
+		            <p class="tab1-right-title icon2">Job requirement</p>
+		            <div class="dash-line"></div>
+		            <div class="tab1-right-content">{{#jobRequirements}}</div>
+		            
+		            <p class="tab1-right-title icon3">Submit</p>
+		            <div class="dash-line"></div>
+		            <div class="tab1-right-content"><a href="mailto:hr@transwarp.io">{{#contact}}</a></div>
+		          </script>
+		
+		          <div class="tab1-right" id="detailList"><p class="tab1-right-title icon1">Job Description</p>
+		            <div class="dash-line"></div>
+		            <div class="tab1-right-content">
+		            	<p>1、 Big data back-end design and development；</p>
+		            	<p>2、 Responsible for data streaming schedule、ETL、reporting tools design and development:</p>
+		            	<p>3、 Ingelligent operation and maintenance design and development.</p>
+									<p>&nbsp;</p>
+								</div>
+		            <p class="tab1-right-title icon2">Job requirements</p>
+		            <div class="dash-line"></div>
+		            <div class="tab1-right-content">
+			            <p>1、 名校本科以上学历，计算机/软件工程专业优先</p>
+								  <p>2、 有专业的计算机素养，熟悉网络编程、操作系统、基本数据结构和算法；</p>
+									<p>3、 具备良好的模块化设计能力，能够对复杂流程抽象和简化，有一定的产品思维；</p>
+									<p>4、 较强的编程能力，熟练掌握Java或Scala语言者优先；</p>
+									<p>5、 有分布式系统、自动化运维、机器学习算法等相关经验者优先。</p>
+									<p>&nbsp;</p>
+									<p>地点：上海</p>
+								</div>
+		            
+		            <p class="tab1-right-title icon3">投递方式</p>
+		            <div class="dash-line"></div>
+		            <div class="tab1-right-content"><a href="mailto:hr@transwarp.io">简历请命名为"姓名-毕业学校-职位</a></div></div>
+		          
+		        </div>
+		      </div>
+			 </section>
+
+		
+     <!-- START Footer Callout -->
+			<script type="text/javascript" src="js/footer-callout.js"></script>   
+      <!-- END Footer Callout -->
+      
+      <!-- START Footer -->
+			<script type="text/javascript" src="js/footer.js"></script> 
+      <!-- END Footer -->
+      	<script type="text/javascript" src="js/template.js"></script>
+			<script type="text/javascript" src="js/template-web.js" ></script>
+			<script type="text/javascript" src="js/joinus.js" ></script>
+       <script type="text/javascript">
+    	
+    	
+      $(function () {
+        initContent()
+      })
+     
+      
+      
+      function initContent() {
+        getList();
+      }
+      
+      /**
+       * 获取招聘列表
+       */
+      function getList() {
+      	
+      }
+      
+      
+      
+      
+      /**
+       * 显示详情
+       */
+      showDetail = function (id, el) {
+        
+        $(".tab1-left-tab-content").removeClass("tab1-left-tab-content-selected");
+        $(el).addClass("tab1-left-tab-content-selected");
+        
+        var data = getDate(id);
+
+        var sHtml = template("detailListTemplate", data);
+        $("#detailList").html(sHtml);     
+        
+      }
+
+
+		
+       $(".tab1-left-tab-title").click(function()
+       {
+       	var tab = $(".tab1-left-tab-title");
+        tab.removeClass('tab1-left-tab-title-selected');
+        $(this).addClass("tab1-left-tab-title-selected");
+        
+        tab.not($(this)).next().slideUp(500)
+        
+        if($(this).next().is(":hidden")){
+          $(this).next().slideDown(500);
+          $(this).next().find($(".tab1-left-tab-content")).eq(0).click();
+        }else {
+          $(this).removeClass("tab1-left-tab-title-selected");
+          $(this).next().slideUp(500);
+        }
+      })
+
+      
+    </script>
+
+   </body>
+</html>
