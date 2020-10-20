@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <title>滴雨科技_超融合平台_第三代物联网平台</title>
+    <link href="content-images/dew_html.png" rel="SHORTCUT ICON" />
+    <meta name="keywords" content="DIYU,diyu, YUDI,yudi,雨滴,雨滴科技,滴雨,滴雨科技,滴雨软件,滴雨公司,边缘计算,web 3.0,Dew,dew,Dew Technology,云计算，超融合,物联网,人工智能,云存储,云服务,区块链,分布式记账,docker云,容器云,K8S,微服务,cloud technology,internet of things, Cloud Storage, storage, software, cloud fusion, artificial intelligent, AI, cloud computing,blcokchain, hyperfledge,Micro Service,Kubernetes 8" />
+    <meta name="description" content="提供一体化的第三代区块链，微服务平台K8S，云计算，云存储，大数据，灾备技术，物联网给中小企业，避免一个企业无法维护多套不同体系统的系统，或是去租用多套云端服务，以达到节省成本的目的。滴雨公司提供的所有软件是一键安装，图形化管理，不管规模大小，全部免费。" />
+    <link rel="stylesheet" type="text/css" href="css/foot.css" />
+    <link rel="stylesheet" type="text/css" href="css/_style.css" />
+    <link rel="stylesheet" type="text/css" href="css/_mobile.css" />
+    <link rel="stylesheet" type="text/css" href="css/primary-blue-grey.css" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/custom-main.js"></script>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="css/IE.css" />
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="js/IE.js"></script>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+
+<!-- START Top-Toolbar -->
+<script type="text/javascript" src="js/Top-Toolbar.js"></script>
+<!-- END Top-Toolbar -->
+
+<!-- START Header -->
+<script type="text/javascript" src="js/Header.js"></script>
+<!-- END Header -->
+
+
+<section id="content-container" class="clearfix">
+    <div id="main-wrap" class="clearfix">
+        <aside class="subnav_cont sidebar">
+            <div class="subnav">
+                <ul>
+                    <li><a href="sol_soa_introduce.html">Microservices</a></li>
+                    <li class="current_subpage"><a href="sol_soa_api.html">银行API网关</a></li>
+                    <li><a href="sol_soa_devops.html">devops</a></li>
+                </ul>
+            </div>
+            <!-- END subnav -->
+        </aside>
+        <!-- END sidebar -->
+
+        <div class="page_content_right sub-content">
+
+            <div class="large-callout">
+                <p class="TitleFont1">滴雨软件银行系统API网关功能</p>
+                <p><img width="670"  alt="" src="content-images/bankapigateway.png" title="银行API网关"/></p>
+                <ul>
+                    <li>采用 API Gateway可以与微版务注册中心连接，实现微服务无感知动态扩容。</li>
+                    <li>API  Gateway 对于无法访问的服务,可以做到自动熔断,无需人工参与。</li>
+                    <li>API  Gateway 可以方便的实现蓝绿部署,金丝雀发布或A/B发布。</li>
+                    <li>API  Gateway 做为系统统—入口,我们可以将各个微服务公共功能放在APl Gateway中实现,以尽可能减少各服务的职责。</li>
+                    <li>帮助我们实现客户端的负载均衡</li>
+                 </ul>
+
+                <h5> 滴雨软件银行系统API网关架构图</h5>
+                <p><img width="670"  alt="" src="content-images/sol_bank_api_1.jpg" title="API网关架构图"/></p>
+
+                <h5> 服务融断流控</h5>
+                <p>为保证服务高可用，最先想到的是服务集群，但集群并不能完全的保证服务高可用，<br/>
+                当某个服务出现故障时，在负载均衡的时候可能多次被调用到，调用方由于无法得到调用结果，会出现请求超时会其他异常，这时候如果不及时的熔断服务，
+                    就有可能会有更多的调用者去调用已经出现故障的服务节点，造成大量调用失败，甚至引发联级故障的雪崩。<br/>
+                我们需要一个熔断机制，当某个节点出现故障时，及时的做熔断处理，防止更多的服务调用失败。</p>
+
+                <h5>服务发现与负载均衡</h5>
+                <p><img width="670"  alt="" src="content-images/sol_bank_api_2.jpg" title="API网关架构图"/></p>
+
+                <h5>支持灰度发布</h5>
+                <p>
+                是指在黑与白之间，能够平滑过渡的一种发布方式。在其上可以进行A/B testing，即让一部分用户继续用产品特性A，一部分用户开始用产品特性B，如果用户对B没有什么反对意见，那么逐步扩大范围，把所有用户都迁移到B上面来。灰度发布可以保证整体系统的稳定，在初始灰度的时候就可以发现、调整问题，以保证其影响度。
+                </p>
+                <p><img width="670"  alt="" src="content-images/sol_bank_api_3.jpg" title="支持灰度发布"/></p>
+
+                <h5>支持多种认证方式</h5>
+                <p>
+                    <ul>
+                        <li> 1.	Appkeys  </li>
+                        <li> 2.	OAuth2   </li>
+                        <li> 3.	OAuth2+JWT   </li>
+                    </ul>
+                </p>
+
+            </div>
+            <!-- END large-callout -->
+        </div>
+        <!-- END page_content-->
+
+    </div>
+    <!-- END main-wrap -->
+</section>
+<!-- END content-container -->
+
+
+<!-- START Footer Callout -->
+<script type="text/javascript" src="js/footer-callout.js"></script>
+<!-- END Footer Callout -->
+
+<!-- START Footer -->
+<script type="text/javascript" src="js/footer.js"></script>
+<!-- END Footer -->
+
+
+</body>
+</html>

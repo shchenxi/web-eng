@@ -5,10 +5,10 @@ document.writeln('     						<dl><dt class="iconfont sunline">Fusion Infinity</d
 document.writeln('     							<dd>	   ');
 document.writeln('												<a href="sol_cloud_computation.html" target="_blank">Elastic Computation</a>  ');
 document.writeln('     										<a href="sol_carnet.html" target="_blank">Smart Car Solution</a>              ');
-document.writeln('     										<a href="sol_bigdata.html" target="_blank">Database & Warehouse</a>           ');  
-document.writeln('     										<a href="sol_diaster_recovery.html" target="_blank">SW Defined Storage</a>    ');  
-document.writeln('     										<a href="sol_mppdatabase.html" target="_blank">Cloud Service</a>              ');  
-document.writeln('     										<a href="sol_cloud_storage.html" target="_blank">Cloud Storage</a>            ');  
+document.writeln('     										<a href="sol_bigdata.html" target="_blank">Database & Warehouse</a>           ');
+document.writeln('     										<a href="sol_diaster_recovery.html" target="_blank">SW Defined Storage</a>    ');
+document.writeln('     										<a href="sol_mppdatabase.html" target="_blank">Cloud Service</a>              ');
+document.writeln('     										<a href="sol_cloud_storage.html" target="_blank">Cloud Storage</a>            ');
 document.writeln('     							</dd>       ');
 document.writeln('     						</dl>    ');
 document.writeln('     						<dl>	   ');
@@ -19,7 +19,7 @@ document.writeln(' 												<a href="sol_cloud_search.html" target="_blank">B
 document.writeln(' 												<a href="sol_bigdataui.html" target="_blank">Finance & Commercical</a>        ');
 document.writeln(' 												<a href="sol_bigdata.html" target="_blank">Big Data</a>                     ');
 document.writeln(' 												<a href="sol_ai.html" target="_blank">Artificial Intelligence</a>              ');
-document.writeln(' 												<a href="sol_iot.html" target="_blank">IOT Application</a>                   ');
+document.writeln(' 												<a href="sol_iot_platform3.html" target="_blank">IOT Application</a>                   ');
 document.writeln(' 										     ')
 document.writeln('     							</dd>       ');
 document.writeln('     						</dl>        ');
@@ -32,7 +32,7 @@ document.writeln('     												<a href="" target="_blank">Finance & Commerci
 document.writeln('     												<a href="" target="_blank">Big Data</a>                 ');
 document.writeln('     												<a href="" target="_blank">Artificial Intelligence</a>  ');
 document.writeln('     												<a href="" target="_blank">IOT Application</a>         ');
-document.writeln('     												<a href="" target="_blank">Smart Car Solution</a>       ');         
+document.writeln('     												<a href="" target="_blank">Smart Car Solution</a>       ');
 document.writeln('     							</dd>       ');
 document.writeln('     							</dl>    ');
 document.writeln('     						<dl>	  ');
@@ -43,7 +43,7 @@ document.writeln('     								  <a href="customercase.html" target="_blank">App
 document.writeln('     								  <a href="KnowHow.html" target="_blank">User Guide</a>                                ');
 document.writeln('     								  <a href="filedownload.html" target="_blank">API Document</a>                         ');
 document.writeln('     								  <a href="service.html" target="_blank">Service price</a>                             ');
-document.writeln('     								  <a href="softwaredownload.html" target="_blank">Software Download</a>                ');       
+document.writeln('     								  <a href="filedownload.html" target="_blank">Software Download</a>                ');
 document.writeln('     							</dd>    ');
 document.writeln('     						</dl>    ');
 document.writeln('     						<dl>	   ');
@@ -51,9 +51,9 @@ document.writeln('     							<dt class="iconfont sunline">About</i></dt>   ');
 document.writeln('     							<dd>       ');
 document.writeln('								<a href="companyintroduction.html" target="_blank">Company Introduction</a>                                                      ');
 document.writeln('								<a href="joinus.html" target="_blank">Join Us</a>                                                                   ');
-document.writeln('								<a href="contact.html" target="_blank">Contact Info</a>                                                              ');            
+document.writeln('								<a href="contact.html" target="_blank">Contact Info</a>                                                              ');
 document.writeln('								<a href="investment.html" target="_blank">Investment Related</a>                                                        ');
-document.writeln('								<a href="http://www.microraindrop.com/DEWMonitor/login.html" target="_blank">NetworkManagementPlatform</a>           ');        
+document.writeln('								<a href="http://www.microraindrop.com/DEWMonitor/login.html" target="_blank">NetworkManagementPlatform</a>           ');
 document.writeln('								<a href="intranet.html" target="_blank">dew intranet</a>                                                            ');
 document.writeln('     							</dd>    ');
 document.writeln('     						</dl>      ');
