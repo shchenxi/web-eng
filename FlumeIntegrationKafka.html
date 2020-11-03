@@ -26,34 +26,34 @@
       <![endif]-->
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
    <body>
-   	
-   	
+
+
      <!-- START Top-Toolbar -->
-    	 <script type="text/javascript" src="js/Top-Toolbar.js"></script>   
+    	 <script type="text/javascript" src="js/Top-Toolbar.js"></script>
       <!-- END Top-Toolbar -->
-      
-      
+
+
       <!-- START Header -->
-  		<script type="text/javascript" src="js/Header.js"></script>   
+  		<script type="text/javascript" src="js/Header.js"></script>
       <!-- END Header -->
 		   	<section id="content-container" class="clearfix">
 				  <div id="main-wrap" class="clearfix">
-				  	 
+
 					  <div class="page_content blog_page_content">
 			         <div id="post-1">
 			            <article class="preview blog-main-preview">
 			               <h2>Flume Integration with Kafka</h2>
-			               <span class="metadata postinfo">Posted on Nov 05, 2019</span> 
-			             		<img src="content-images/Flumeflafka.jpg" alt="" />   
-			             		<p></p>	
-			               <p><strong>概述</strong></p>	
+			               <span class="metadata postinfo">Posted on Nov 05, 2019</span>
+			             		<img src="content-images/Flumeflafka.jpg" alt="" />
+			             		<p></p>
+			               <p><strong>概述</strong></p>
 			               <p>
 			               	（1）kafka和flume都是日志系统。kafka是分布式消息中间件，自带存储，提供push和pull存取数据功能。flume分为agent（数据采集器）,collector（数据简单处理和写入）,storage（存储器）三部分，每一部分都是可以定制的。比如agent采用RPC（Thrift-RPC）、text（文件）等，storage指定用hdfs做。
-			               	</p>	
+			               	</p>
 			               	<p>
 											（2）kafka做日志缓存应该是更为合适的，但是 flume的数据采集部分做的很好，可以定制很多数据源，减少开发量。所以比较流行flume+kafka模式，如果为了利用flume写hdfs的能力，也可以采用kafka+flume的方式。
 											</p>
-										  <p><strong>1.	Flume介绍</strong></p>	
+										  <p><strong>1.	Flume介绍</strong></p>
 			               	<p>
 											 Flume是一个分布式、可靠、和高可用的海量日志聚合的系统，支持在系统中定制各类数据发送方，用于收集数据；同时，Flume提供对数据进行简单处理，并写到各种数据接受方（可定制）的能力。
 											</p>
@@ -66,13 +66,13 @@
 											<p>
 												可管理性: 所有agent和colletor由master统一管理，这使得系统便于维护。多master情况，Flume利用ZooKeeper和gossip，保证动态配置数据的一致性。用户可以在master上查看各个数据源或者数据流执行情况，且可以对各个数据源配置和动态加载。Flume提供了web 和shell script command两种形式对数据流进行管理。
 			               	</p>
-			               	<p>	
+			               	<p>
 			               		功能可扩展性用户可以根据需要添加自己的agent，collector或者storage。此外，Flume自带了很多组件，包括各种agent（file， syslog等），collector和storage（file，HDFS等）。
-			               	</p>	
-			               	<p>	
+			               	</p>
+			               	<p>
 											<strong>2.	Flume 的 一些核心概念：</strong>
 											</p>
-											<p>	
+											<p>
 											<table  border="1" cellspacing="0" style="text-align:justify;font-size:12pt">
 												<thead>
 													<tr >
@@ -133,24 +133,24 @@
 												</td>
 												</tr>
 											</table>
-											
+
 											</p>
-											
-			               	<p>	
+
+			               	<p>
 												<strong>3.	Flume的整体构成图</strong>
-											</p>	         
-										  <p>	
-										  	 		<img src="content-images/flume.jpg" alt="" /> 
-											</p>	   
-											
-											
-											<p>	
+											</p>
+										  <p>
+										  	 		<img src="content-images/flume.jpg" alt="" />
+											</p>
+
+
+											<p>
 											 <strong>4.	 tomcat业务日志收集</strong>
-											</p>	         
-										  <p>	
-										  	 <img src="content-images/Flumeflafka02.png" alt="" /> 
-											</p>	   
-			              	<p>			              		
+											</p>
+										  <p>
+										  	 <img src="content-images/Flumeflafka02.png" alt="" />
+											</p>
+			              	<p>
 			              		    关于Flume收集tomcat业务日志，需要调整的点比较多；设计初衷是：
 			              		    </br>
     												1）HDFS中收集所有的历史日志，包括catalina、access_log、业务日志等。
@@ -161,7 +161,7 @@
 			              	<p>
 			              		<strong>5.KAFKA</strong>
 			              	</p>
-		
+
 			              	<p>
 			              	  基本概念    </br>
 												kafka是一个分布式的消息缓存系统    </br>
@@ -173,20 +173,20 @@
 												消费者可以分组，比如有两个消费者AB，共同消费一个topic:testTopic，AB所消费的消息不会重复，比如testTopic中有100个消息，编号为0-99，如果A消费0-49，那么B就消费50-99。消费者在消费时可以指定消息的起始偏移量
 			              	</p>
 			              	<p>
-			              			 <img src="content-images/kafak.jpg" alt="" /> 
+			              			 <img src="content-images/kafak.jpg" alt="" />
 			              	</p>
 			              	<p>
-			              		producer是数据源，比如flume架构，consumer是数据的输出，例如storm架构。Kafka服务器支持消息的分主题、分区。不同的子系统可以使用不同的主题。分区的意义在于负载均衡一般性的大数据流处理，还可以包括FLINK以及NOSQL 这里介绍如何集成Flume 和 Kafka. 
+			              		producer是数据源，比如flume架构，consumer是数据的输出，例如storm架构。Kafka服务器支持消息的分主题、分区。不同的子系统可以使用不同的主题。分区的意义在于负载均衡一般性的大数据流处理，还可以包括FLINK以及NOSQL 这里介绍如何集成Flume 和 Kafka.
 			              	</p>
 			              	<p>
-			              		 <img src="content-images/Flumeflafka03.png" alt="" /> 
+			              		 <img src="content-images/Flumeflafka03.png" alt="" />
 			              	</p>
 			                <p>
-			              		 <img src="content-images/Flumeflafka04.jpg" alt="" /> 
+			              		 <img src="content-images/Flumeflafka04.jpg" alt="" />
 			              	</p>
-			              	
+
 			              	 <p>
-			              		  <h3><a href="documents\FlumeintegrationwithKafka.pdf" target="_blank">详细内容请下载Flume Integration with Kafka文档</a></h3>
+			              		  <h3><a href="#" target="_self">详细内容请下载Flume Integration with Kafka文档</a></h3>
 			              	</p>
 			            </article>
 			         </div>
@@ -194,11 +194,11 @@
 		       </div>
       </section>
     <!-- START Footer Callout -->
-		<script type="text/javascript" src="js/footer-callout.js"></script>   
+		<script type="text/javascript" src="js/footer-callout.js"></script>
     <!-- END Footer Callout -->
-    
+
     <!-- START Footer -->
-		<script type="text/javascript" src="js/footer.js"></script> 
+		<script type="text/javascript" src="js/footer.js"></script>
     <!-- END Footer -->
    </body>
 </html>
