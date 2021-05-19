@@ -69,7 +69,7 @@ document.writeln('     					</div>       ');
 document.writeln('     				</div>      ');
 document.writeln('     				<div class="copyright clearfix">      ');
 document.writeln('     					<div class="copyright-in comwidth clearfix"> ');
-document.writeln('     							<a href="index.html">To Home Page  </a>  Dew Technology Copyright @2019 ALL Rights Reserved. &nbsp;<span><a href="http://www.miitbeian.gov.cn/">&nbsp;Shanghai ICP License Number 19003492 </a></span> ');
+document.writeln('     							<a href="index.html">To Home Page  </a>  Dew Technology Copyright @2019 ALL Rights Reserved. &nbsp;<span><a href="https://beian.miit.gov.cn/#/Integrated/index">&nbsp;Shanghai ICP License Number 19003492 </a></span> ');
 document.writeln('     					</div>     ');
 document.writeln('     				</div>     ');
 
